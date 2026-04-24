@@ -11,13 +11,24 @@ interface AuthState {
 }
 
 const USERNAME_KEY = "second_brain_username";
+const TOKEN_KEY = "second_brain_token";
 
 export const useAuthStore = create<AuthState>((set) => ({
-  accessToken: null,
+  accessToken:
+    typeof window !== "undefined" ? localStorage.getItem(TOKEN_KEY) : null,
   username:
     typeof window !== "undefined" ? localStorage.getItem(USERNAME_KEY) : null,
   isInitialized: false,
-  setAccessToken: (token) => set({ accessToken: token }),
+  setAccessToken: (token) => {
+    if (typeof window !== "undefined") {
+      if (token) {
+        localStorage.setItem(TOKEN_KEY, token);
+      } else {
+        localStorage.removeItem(TOKEN_KEY);
+      }
+    }
+    set({ accessToken: token });
+  },
   setUsername: (username) => {
     if (typeof window !== "undefined") {
       if (username) {
@@ -32,6 +43,7 @@ export const useAuthStore = create<AuthState>((set) => ({
   clearAuth: () => {
     if (typeof window !== "undefined") {
       localStorage.removeItem(USERNAME_KEY);
+      localStorage.removeItem(TOKEN_KEY);
     }
     set({ accessToken: null, username: null });
   },
