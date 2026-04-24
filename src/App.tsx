@@ -11,7 +11,6 @@ import DashboardPage from "@/pages/Dashboard";
 import SearchPage from "@/pages/SearchPage";
 import ChatPage from "@/pages/ChatPage";
 import DigestPage from "@/pages/DigestPage";
-import SuggestionsPage from "@/pages/SuggestionsPage";
 import SharedPage from "@/pages/SharedPage";
 import SettingsPage from "@/pages/SettingsPage";
 import PublicBrainPage from "@/pages/PublicBrainPage";
@@ -88,14 +87,6 @@ const App = () => (
             element={
               <AuthenticatedApp>
                 <DigestPage />
-              </AuthenticatedApp>
-            }
-          />
-          <Route
-            path="/suggestions"
-            element={
-              <AuthenticatedApp>
-                <SuggestionsPage />
               </AuthenticatedApp>
             }
           />

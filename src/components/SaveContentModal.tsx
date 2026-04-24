@@ -128,7 +128,7 @@ export function SaveContentModal({
               className="bg-secondary border-border"
             />
           </div>
-          <div className="space-y-2">
+          {/* <div className="space-y-2">
             <Label>Tags</Label>
             <div className="flex flex-wrap gap-1.5 mb-2">
               {tags.map((tag) => (
@@ -169,7 +169,7 @@ export function SaveContentModal({
                 </div>
               )}
             </div>
-          </div>
+          </div> */}
           <Button
             type="submit"
             className="w-full"

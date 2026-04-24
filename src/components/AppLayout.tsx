@@ -32,7 +32,6 @@ const navItems = [
   { icon: Search, label: "Search", path: "/search" },
   { icon: MessageSquare, label: "Ask Brain", path: "/chat" },
   { icon: BarChart3, label: "Digest", path: "/digest" },
-  { icon: Lightbulb, label: "Suggestions", path: "/suggestions" },
   { icon: Share2, label: "Shared Brain", path: "/shared" },
   { icon: Settings, label: "Settings", path: "/settings" },
 ];
@@ -42,7 +41,6 @@ const pageTitles: Record<string, string> = {
   "/search": "Search",
   "/chat": "Ask Brain",
   "/digest": "Digest",
-  "/suggestions": "Suggestions",
   "/shared": "Shared Brain",
   "/settings": "Settings",
 };
