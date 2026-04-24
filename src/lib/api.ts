@@ -49,8 +49,8 @@ export async function apiFetch<T = any>(
     credentials: "include",
   });
 
-  // If we receive an auth error, attempt to refresh the session (cookie-based)
-  if (res.status === 401) {
+  // If we receive an auth error AND we had a token, attempt to refresh
+  if (res.status === 401 && token) {
     const newToken = await refreshAccessToken();
     if (newToken) {
       headers["Authorization"] = `Bearer ${newToken}`;
