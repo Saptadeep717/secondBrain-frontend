@@ -32,10 +32,7 @@ function AuthInitializer() {
   const setInitialized = useAuthStore((s) => s.setInitialized);
 
   useEffect(() => {
-    (async () => {
-      await refreshAccessToken();
-      setInitialized(true);
-    })();
+    setInitialized(true);
   }, [setInitialized]);
 
   return null;
