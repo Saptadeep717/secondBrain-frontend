@@ -1,6 +1,6 @@
 import { useAuthStore } from "@/stores/authStore";
 
-const BASE_URL = " https://secondbrain-mly0.onrender.com";
+const BASE_URL = "https://secondbrain-mly0.onrender.com";
 
 let isRefreshing = false;
 let refreshPromise: Promise<string | null> | null = null;
